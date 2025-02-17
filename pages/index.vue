@@ -30,7 +30,11 @@
           </p>
         </template>
         <template #cta>
-          <a href="https://tally.so/r/mJR7OX" target="_blank" rel="noreferrer noopener">
+          <a
+            href="https://tally.so/r/mJR7OX"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <RoundedButton
               custom-class="bg-white-200 font-text text-black font-semibold"
             >
@@ -40,8 +44,8 @@
         </template>
       </HeroSideImage>
     </div>
-    <div class="section2 bg-white-200">
-      <div class="container mx-auto max-w-2/3 px-10 py-8">
+    <div class="section2 bg-white-200 pb-20">
+      <div class="container mx-auto max-w-[1200px] px-10 py-8">
         <div class="section2-title max-w-[700px] mx-auto">
           <h2
             class="text-2xl md:text-3xl font-title mb-12 text-center"
@@ -57,12 +61,12 @@
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="flex flex-col items-center mb-8 md:mb-0 md:w-1/3">
             <div class="roundBlock relative">
-              <Circle class="h-40 w-40 relative fill-primary-200"/>
+              <Circle class="h-40 w-40 relative fill-primary-200" />
               <div class="text-center absolute top-0">
-                <div class="text-4xl font-title font-semibold mb-2">
+                <div class="text-2xl md:text-4xl font-title font-semibold mb-2">
                   70%
                 </div>
-                <div class="text-base font-text font-regular">
+                <div class="text-sm md:text-base font-text font-regular">
                   {{ $t("index.block1Text") }}
                 </div>
               </div>
@@ -71,11 +75,9 @@
 
           <div class="flex flex-col items-center mb-8 md:mb-0 md:w-1/3">
             <div class="roundBlock relative">
-              <Circle class="h-40 w-40 relative fill-secondary-200"/>
+              <Circle class="h-40 w-40 relative fill-secondary-200" />
               <div class="text-center absolute top-0">
-                <div class="text-4xl font-title font-semibold mb-2">
-                  88%
-                </div>
+                <div class="text-4xl font-title font-semibold mb-2">88%</div>
                 <div class="text-base font-text font-regular">
                   {{ $t("index.block2Text") }}
                 </div>
@@ -85,11 +87,9 @@
 
           <div class="flex flex-col items-center mb-8 md:mb-0 md:w-1/3">
             <div class="roundBlock relative">
-              <Circle class="h-40 w-40 relative fill-accent-200"/>
+              <Circle class="h-40 w-40 relative fill-accent-200" />
               <div class="text-center absolute top-0">
-                <div class="text-4xl font-title font-semibold mb-2">
-                  33 B€
-                </div>
+                <div class="text-4xl font-title font-semibold mb-2">33 B€</div>
                 <div class="text-base font-text font-regular">
                   {{ $t("index.block3Text") }}
                 </div>
@@ -97,8 +97,6 @@
             </div>
           </div>
         </div>
-
-        
       </div>
     </div>
   </div>
