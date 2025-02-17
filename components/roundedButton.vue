@@ -1,5 +1,5 @@
 <template>
-  <button :class="['rounded-full px-8 py-2', customClass]">
+  <button :class="['rounded-full px-8 py-2 cursor-pointer', customClass]">
     <slot></slot>
   </button>
 </template>
