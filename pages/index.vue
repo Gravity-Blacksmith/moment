@@ -102,7 +102,9 @@
     </div>
 
     <div class="section3 relative">
-      <div class="section3-background  bg-primary-100 md:min-h-screen text-white-200 pt-10 md:[clip-path:polygon(0_0,100%_0,100%_30%,0_90%)]">
+      <div
+        class="section3-background bg-primary-100 md:min-h-screen text-white-200 pt-10 md:[clip-path:polygon(0_0,100%_0,100%_30%,0_90%)]"
+      >
         <div class="container mx-auto max-w-[1200px] px-10 py-8 -z-10">
           <div class="section3-title max-w-[700px] mx-auto mb-10">
             <h2 class="text-2xl md:text-3xl font-title mb-4 text-center">
@@ -114,19 +116,21 @@
           </div>
         </div>
       </div>
-      <div class="cards relative md:absolute md:top-1/3 md:left-1/2 md:transform md:-translate-x-1/2 flex flex-col items-center md:flex-row gap-4 justify-center z-10">
+      <div
+        class="cards relative md:absolute md:top-1/3 md:left-1/2 md:transform md:-translate-x-1/2 flex flex-col items-center md:flex-row gap-4 justify-center z-10"
+      >
         <RoundedCard
           imageSrc="moment_card_1.svg"
           customClass="bg-white-200 w-full max-w-[300px] shrink-0"
         >
           <template #title>
-        {{ $t("index.card1Title") }}
+            {{ $t("index.card1Title") }}
           </template>
           <template #text>
-        {{ $t("index.card1Text") }}
+            {{ $t("index.card1Text") }}
           </template>
           <template #footer>
-        {{ $t("index.card1Footer") }}
+            {{ $t("index.card1Footer") }}
           </template>
         </RoundedCard>
         <RoundedCard
@@ -134,15 +138,27 @@
           customClass="bg-white-200 md:w-full max-w-[300px] shrink-0"
         >
           <template #title>
-        {{ $t("index.card2Title") }}
+            {{ $t("index.card2Title") }}
           </template>
           <template #text>
-        {{ $t("index.card2Text") }}
+            {{ $t("index.card2Text") }}
           </template>
           <template #footer>
-        {{ $t("index.card2Footer") }}
+            {{ $t("index.card2Footer") }}
           </template>
         </RoundedCard>
+      </div>
+      <div class="quote relative md:absolute md:bottom-0 w-full py-10">
+        <div
+          class="container relative mx-auto max-w-[400px] px-10 py-5 rounded-3xl border-primary-100 border-3 z-50"
+        >
+          <div class="font-title text-center text-lg md:text-xl font-semibold">
+            {{ $t("index.quote") }}
+          </div>
+          <Circle
+            class="h-30 w-30 fill-secondary-200 mx-auto mb-6 absolute -left-20 -top-5 opacity-65"
+          />
+        </div>
       </div>
     </div>
   </div>
