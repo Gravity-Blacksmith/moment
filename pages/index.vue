@@ -15,7 +15,7 @@
         custom-class="text-white-200 pt-20 pb-30"
       >
         <template #title>
-          <h1 class="text-2xl md:text-4xl font-title mb-4">
+          <h1 class="text-2xl md:text-5xl font-title mb-10">
             {{ $t("index.title") }}
           </h1>
         </template>
@@ -44,6 +44,7 @@
         </template>
       </HeroSideImage>
     </div>
+
     <div class="section2 bg-white-200 pb-20">
       <div class="container mx-auto max-w-[1200px] px-10 py-8">
         <div class="section2-title max-w-[700px] mx-auto">
@@ -97,6 +98,51 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="section3 relative">
+      <div class="section3-background  bg-primary-100 md:min-h-screen text-white-200 pt-10 md:[clip-path:polygon(0_0,100%_0,100%_30%,0_90%)]">
+        <div class="container mx-auto max-w-[1200px] px-10 py-8 -z-10">
+          <div class="section3-title max-w-[700px] mx-auto mb-10">
+            <h2 class="text-2xl md:text-3xl font-title mb-4 text-center">
+              {{ $t("index.section3Title") }}
+            </h2>
+            <p class="text-base md:text-lg font-text font-light text-center">
+              {{ $t("index.section3Text") }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="cards relative md:absolute md:top-1/3 md:left-1/2 md:transform md:-translate-x-1/2 flex flex-col items-center md:flex-row gap-4 justify-center z-10">
+        <RoundedCard
+          imageSrc="moment_card_1.svg"
+          customClass="bg-white-200 w-full max-w-[300px] shrink-0"
+        >
+          <template #title>
+        {{ $t("index.card1Title") }}
+          </template>
+          <template #text>
+        {{ $t("index.card1Text") }}
+          </template>
+          <template #footer>
+        {{ $t("index.card1Footer") }}
+          </template>
+        </RoundedCard>
+        <RoundedCard
+          imageSrc="moment_card_2.svg"
+          customClass="bg-white-200 md:w-full max-w-[300px] shrink-0"
+        >
+          <template #title>
+        {{ $t("index.card2Title") }}
+          </template>
+          <template #text>
+        {{ $t("index.card2Text") }}
+          </template>
+          <template #footer>
+        {{ $t("index.card2Footer") }}
+          </template>
+        </RoundedCard>
       </div>
     </div>
   </div>
