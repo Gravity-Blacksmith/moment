@@ -11,5 +11,14 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  modules: ['@nuxt/eslint'],
+  modules: ['@nuxt/eslint', '@nuxt/image','@nuxtjs/i18n'],
+  i18n: {
+    defaultLocale: 'fr',
+    detectBrowserLanguage: false,
+    locales: [
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'fr', iso: 'fr-FR', name: 'Français' }
+    ],
+    vueI18n: './i18n.config.js'
+  },
 })
