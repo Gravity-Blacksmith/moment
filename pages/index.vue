@@ -101,67 +101,80 @@
       </div>
     </div>
 
-    <div class="section3 relative">
-      <div
-        class="section3-background relative bg-primary-100 min-h-screen text-white-200 pt-10 md:[clip-path:polygon(0_0,100%_0,100%_30%,0_90%)]"
-      ></div>
-      <div
-        class="container absolute top-0 left-1/2 transform -translate-x-1/2 text-white-200 mx-auto max-w-[1200px] px-10 py-8"
-      >
-        <div class="section3-title max-w-[700px] mx-auto mb-10">
-          <h2 class="text-2xl md:text-3xl font-title mb-4 text-center">
-            {{ $t("index.section3Title") }}
-          </h2>
-          <p class="text-base md:text-lg font-text font-light text-center">
-            {{ $t("index.section3Text") }}
-          </p>
-        </div>
+    <div class="section3 bg-primary-100 w-full z-0">
+
+      <div class="section3-greenbg relative z-1">
         <div
-          class="cards relative flex flex-col items-center md:flex-row gap-4 justify-center"
+          class="container text-white-200 mx-auto max-w-[1200px] px-10 py-8"
         >
-          <RoundedCard
-            imageSrc="moment_card_1.svg"
-            customClass="bg-white-200 w-full max-w-[300px] shrink-0"
-          >
-            <template #title>
-              {{ $t("index.card1Title") }}
-            </template>
-            <template #text>
-              {{ $t("index.card1Text") }}
-            </template>
-            <template #footer>
-              {{ $t("index.card1Footer") }}
-            </template>
-          </RoundedCard>
-          <RoundedCard
-            imageSrc="moment_card_2.svg"
-            customClass="bg-white-200 md:w-full max-w-[300px] shrink-0"
-          >
-            <template #title>
-              {{ $t("index.card2Title") }}
-            </template>
-            <template #text>
-              {{ $t("index.card2Text") }}
-            </template>
-            <template #footer>
-              {{ $t("index.card2Footer") }}
-            </template>
-          </RoundedCard>
-        </div>
-        <div class="quote relative w-full py-10">
-            <div
-            class="container md:absolute max-w-[300px] md:left-1/2 md:transform md:-translate-x-1/2 mx-auto px-10 py-5 rounded-3xl border-primary-100 border-3 z-150"
-          >
-            <h4
-              class="font-title text-center text-black text-lg md:text-xl font-semibold"
-            >
-              {{ $t("index.quote") }}
-            </h4>
+          <div class="section3-title max-w-[700px] mx-auto py-10 text-white-200">
+            <h2 class="text-2xl md:text-3xl font-title mb-4 text-center ">
+              {{ $t("index.section3Title") }}
+            </h2>
+            <p class="text-base md:text-lg font-text font-light text-center">
+              {{ $t("index.section3Text") }}
+            </p>
           </div>
-          <Circle
-            class="h-30 w-30 fill-secondary-200 mx-auto mb-6 absolute top-5 left-1/2 transform -translate-x-1/2 -translate-x-[200px] -z-10"
-          />
+  
+          <div
+            class="cards flex flex-col items-center md:flex-row gap-10 justify-center"
+          >
+            <RoundedCard
+              imageSrc="moment_card_1.svg"
+              customClass="bg-white-200 w-full max-w-[300px] shrink-0"
+            >
+              <template #title>
+                {{ $t("index.card1Title") }}
+              </template>
+              <template #text>
+                {{ $t("index.card1Text") }}
+              </template>
+              <template #footer>
+                {{ $t("index.card1Footer") }}
+              </template>
+            </RoundedCard>
+            <RoundedCard
+              imageSrc="moment_card_2.svg"
+              customClass="bg-white-200 md:w-full max-w-[300px] shrink-0"
+            >
+              <template #title>
+                {{ $t("index.card2Title") }}
+              </template>
+              <template #text>
+                {{ $t("index.card2Text") }}
+              </template>
+              <template #footer>
+                {{ $t("index.card2Footer") }}
+              </template>
+            </RoundedCard>
+          </div>
         </div>
+      </div>
+      <div class="quote relative w-full py-10 min-h-[200px] bg-white-200">
+        <div
+          class="container h-fit md:absolute max-w-[300px] md:left-1/2 md:transform md:-translate-x-1/2 mx-auto px-10 py-5 rounded-3xl border-primary-100 border-3 z-150"
+        >
+          <h4
+            class="font-title text-center text-black text-lg md:text-xl font-semibold"
+          >
+            {{ $t("index.quote") }}
+          </h4>
+        </div>
+        <Circle
+          class="h-30 w-30 fill-secondary-200 mx-auto mb-6 absolute top-0 left-1/2 transform -translate-x-1/2 -translate-x-[200px]"
+        />
+      </div>
+    </div>
+    <div class="section4 bg-white-200 pb-20">
+      <div class="section4-title w-fit mx-auto relative">
+        <h2
+          class="text-2xl md:text-3xl font-title mb-4 text-center relative w-fit mx-auto z-10"
+        >
+          {{ $t("index.section4Title") }}
+        </h2>
+        <Circle
+          class="h-25 w-25 fill-accent-200 md:absolute md:-top-5 md:-left-10 z-0"
+        />
       </div>
     </div>
   </div>
@@ -173,3 +186,18 @@ import Circle from "~/assets/images/circle.vue";
 
 const { t } = useI18n();
 </script>
+
+<style scoped>
+.section3-greenbg::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Ajuste la hauteur du triangle */
+  background-color: var(--color-white-200);
+  z-index: -1;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+</style>
