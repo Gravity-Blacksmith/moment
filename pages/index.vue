@@ -160,26 +160,26 @@
           </h4>
         </div>
         <Circle
-          class="h-30 w-30 fill-secondary-200 mx-auto mb-6 absolute top-0 left-1/2 transform -translate-x-1/2 -translate-x-[200px]"
+          class="h-30 w-30 fill-secondary-200 mx-auto mb-6 hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 -translate-x-[200px]"
         />
       </div>
     </section>
 
-    <section class="section4 bg-white-200 pb-20">
-      <div class="section4-title w-fit mx-auto pb-16 relative">
+    <section class="section4 bg-primary-200 pb-10 md:pb-50">
+      <div class="section4-title w-fit mx-auto pb-16 relative pt-5">
         <h2
           class="text-2xl md:text-3xl font-title mb-4 text-center relative w-fit mx-auto z-10"
         >
           {{ $t("index.section4Title") }}
         </h2>
         <Circle
-          class="h-25 w-25 fill-accent-200 md:absolute md:-top-5 md:-left-10 z-0"
+          class="h-25 w-25 fill-accent-200 hidden md:block md:absolute md:-top-5 md:-left-10 z-0"
         />
       </div>
       <div
         class="section4-trust relative container mx-auto max-w-[700px] bg-grey-100 rounded-xl shadow-lg p-10"
       >
-        <div class="logos grid grid-cols-4 gap-4 p-4">
+        <div class="logos flex flex-col md:grid grid-cols-4 gap-4 p-4">
           <div class="logo">
             <NuxtImg src="keolis_logo.svg" alt="Logos" />
           </div>
@@ -195,7 +195,7 @@
         </div>
 
         <div
-          class="testimonial bg-primary-100 absolute rounded-xl p-4 w-7/8 mx-auto text-center"
+          class="testimonial bg-primary-100 md:absolute rounded-xl p-4 w-7/8 mx-auto text-center"
         >
           <p
             class="text-base md:text-lg font-text text-white-200 p-4 font-medium"
@@ -209,6 +209,39 @@
             >
           </p>
         </div>
+      </div>
+    </section>
+
+    <section class="section5 bg-white-200 p-14">
+      <div
+        class="section5-title w-fit mx-auto pb-16 max-w-[700px] pt-8 relative"
+      >
+        <Circle
+          class="h-25 w-25 fill-accent-200 hidden md:block md:absolute md:top-0 md:right-10 z-0"
+        />
+        <h2
+          class="text-2xl md:text-3xl font-title mb-4 text-center relative w-fit mx-auto z-10"
+        >
+          {{ $t("index.section5Title") }}
+        </h2>
+      </div>
+      <div
+        class="relative container mx-auto max-w-[1200px] bg-white-200 p-10"
+      >
+      <div class="logos flex flex-col md:grid grid-cols-4 gap-4 p-4">
+        <div class="logo2">
+          <NuxtImg src="science_based_target.svg" alt="Logos"/>
+        </div>
+        <div class="logo2">
+          <NuxtImg src="csrd.svg" alt="Logos"/>
+        </div>
+        <div class="logo2">
+          <NuxtImg src="greenhouse_gas_protocol.svg" alt="Logos"/>
+        </div>
+        <div class="logo2">
+          <NuxtImg src="cdp.svg" alt="Logos"/>
+        </div>
+      </div>
       </div>
     </section>
   </main>
@@ -240,5 +273,22 @@ const { t } = useI18n();
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logo2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.section5-title::before {
+  content: Circle;
+  position: absolute;
+  top: -20px;
+  left: 50%;
 }
 </style>
