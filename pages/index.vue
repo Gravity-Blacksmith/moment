@@ -1,6 +1,6 @@
 <template>
-  <div class="index bg-white-200">
-    <div
+  <main class="index bg-white-200">
+    <header
       class="header bg-gradient-to-r from-primary-100 to-secondary-100 [clip-path:polygon(0_0,100%_0,100%_80%,0_100%)]"
     >
       <div class="hidden md:block headerSvg absolute top-0 left-0 w-full -z-10">
@@ -43,9 +43,9 @@
           </a>
         </template>
       </HeroSideImage>
-    </div>
+    </header>
 
-    <div class="section2 bg-white-200 pb-20">
+    <section class="section2 bg-white-200 pb-20">
       <div class="container mx-auto max-w-[1200px] px-10 py-8">
         <div class="section2-title max-w-[700px] mx-auto">
           <h2
@@ -99,23 +99,22 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section3 bg-primary-100 w-full z-0">
-
+    <section class="section3 bg-primary-100 w-full z-0">
       <div class="section3-greenbg relative z-1">
-        <div
-          class="container text-white-200 mx-auto max-w-[1200px] px-10 py-8"
-        >
-          <div class="section3-title max-w-[700px] mx-auto py-10 text-white-200">
-            <h2 class="text-2xl md:text-3xl font-title mb-4 text-center ">
+        <div class="container text-white-200 mx-auto max-w-[1200px] px-10 py-8">
+          <div
+            class="section3-title max-w-[700px] mx-auto py-10 text-white-200"
+          >
+            <h2 class="text-2xl md:text-3xl font-title mb-4 text-center">
               {{ $t("index.section3Title") }}
             </h2>
             <p class="text-base md:text-lg font-text font-light text-center">
               {{ $t("index.section3Text") }}
             </p>
           </div>
-  
+
           <div
             class="cards flex flex-col items-center md:flex-row gap-10 justify-center"
           >
@@ -164,9 +163,10 @@
           class="h-30 w-30 fill-secondary-200 mx-auto mb-6 absolute top-0 left-1/2 transform -translate-x-1/2 -translate-x-[200px]"
         />
       </div>
-    </div>
-    <div class="section4 bg-white-200 pb-20">
-      <div class="section4-title w-fit mx-auto relative">
+    </section>
+
+    <section class="section4 bg-white-200 pb-20">
+      <div class="section4-title w-fit mx-auto pb-16 relative">
         <h2
           class="text-2xl md:text-3xl font-title mb-4 text-center relative w-fit mx-auto z-10"
         >
@@ -176,8 +176,42 @@
           class="h-25 w-25 fill-accent-200 md:absolute md:-top-5 md:-left-10 z-0"
         />
       </div>
-    </div>
-  </div>
+      <div
+        class="section4-trust relative container mx-auto max-w-[700px] bg-grey-100 rounded-xl shadow-lg p-10"
+      >
+        <div class="logos grid grid-cols-4 gap-4 p-4">
+          <div class="logo">
+            <NuxtImg src="keolis_logo.svg" alt="Logos" />
+          </div>
+          <div class="logo">
+            <NuxtImg src="bpi_logo.svg" alt="Logos" />
+          </div>
+          <div class="logo">
+            <NuxtImg src="station_f_logo.svg" alt="Logos" />
+          </div>
+          <div class="logo">
+            <NuxtImg src="bearing_point_logo.svg" alt="Logos" />
+          </div>
+        </div>
+
+        <div
+          class="testimonial bg-primary-100 absolute rounded-xl p-4 w-7/8 mx-auto text-center"
+        >
+          <p
+            class="text-base md:text-lg font-text text-white-200 p-4 font-medium"
+          >
+            "{{ $t("index.testimonial") }}"
+          </p>
+          <p>
+            <span
+              class="text-base md:text-lg font-text font-thin text-white-200"
+              >{{ $t("index.testimonialAuthor") }}</span
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script setup>
@@ -200,4 +234,11 @@ const { t } = useI18n();
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
 }
 
+.logo {
+  width: auto;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
