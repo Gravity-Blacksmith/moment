@@ -2,6 +2,7 @@
   <header
     class="header bg-gradient-to-r from-primary-100 to-secondary-100 [clip-path:polygon(0_0,100%_0,100%_80%,0_100%)]"
   >
+    <AppNavbar />
     <div class="hidden md:block headerSvg absolute top-0 left-0 w-full -z-10">
       <NuxtImg
         src="moment_saas_esg_hero_lines.svg"
@@ -10,6 +11,7 @@
       />
     </div>
     <HeroSideImage
+      id="appHero"
       image="moment_saas_esg_hero.svg"
       custom-class="text-white-200 pt-20 pb-30"
     >
@@ -275,7 +277,9 @@
     </section>
   </main>
   <footer>
-    <div class="footer relative bg-primary-100 text-white-200 py-10 overflow-hidden">
+    <div
+      class="footer relative bg-primary-100 text-white-200 py-10 overflow-hidden"
+    >
       <div class="hidden md:block absolute top-0 left-0 w-full">
         <NuxtImg
           src="moment_saas_esg_hero_lines.svg"
