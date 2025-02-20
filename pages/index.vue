@@ -1,5 +1,5 @@
 <template>
-  <div id="content" class="opacity-0">
+  <div id="content" class="opacity-0 bg-white-200">
     <header
       class="header bg-gradient-to-r from-primary-100 to-secondary-100 [clip-path:polygon(0_0,100%_0,100%_80%,0_100%)]"
     >
