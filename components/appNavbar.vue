@@ -60,7 +60,7 @@
         </div>
         <NuxtLink class="hidden lg:flex" to="https://app.moment.green/login" target="_blank">
           <RoundedButton
-            class="text-md font-semibold text-black border-2 border-white-200"
+            class="text-md font-semibold text-white-200 border-2 border-white-200"
             
             >{{ $t('index.login') }}</RoundedButton>
         </NuxtLink>
