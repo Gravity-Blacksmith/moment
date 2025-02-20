@@ -1,50 +1,49 @@
 <template>
-  <main class="index bg-white-200">
-    <header
-      class="header bg-gradient-to-r from-primary-100 to-secondary-100 [clip-path:polygon(0_0,100%_0,100%_80%,0_100%)]"
+  <header
+    class="header bg-gradient-to-r from-primary-100 to-secondary-100 [clip-path:polygon(0_0,100%_0,100%_80%,0_100%)]"
+  >
+    <div class="hidden md:block headerSvg absolute top-0 left-0 w-full -z-10">
+      <NuxtImg
+        src="moment_saas_esg_hero_lines.svg"
+        alt="Header SVG"
+        class="w-full opacity-55"
+      />
+    </div>
+    <HeroSideImage
+      image="moment_saas_esg_hero.svg"
+      custom-class="text-white-200 pt-20 pb-30"
     >
-      <div class="hidden md:block headerSvg absolute top-0 left-0 w-full -z-10">
-        <NuxtImg
-          src="moment_saas_esg_hero_lines.svg"
-          alt="Header SVG"
-          class="w-full opacity-55"
-        />
-      </div>
-      <HeroSideImage
-        image="moment_saas_esg_hero.svg"
-        custom-class="text-white-200 pt-20 pb-30"
-      >
-        <template #title>
-          <h1 class="text-2xl md:text-5xl font-title mb-10">
-            {{ $t("index.title") }}
-          </h1>
-        </template>
-        <template #subtitle>
-          <p class="text-base md:text-lg mb-6 font-text font-semibold">
-            {{ $t("index.subtitle") }}
-          </p>
-        </template>
-        <template #description>
-          <p class="text-base md:text-lg mb-6 font-text font-light">
-            {{ $t("index.description") }}
-          </p>
-        </template>
-        <template #cta>
-          <a
-            href="https://tally.so/r/mJR7OX"
-            target="_blank"
-            rel="noreferrer noopener"
+      <template #title>
+        <h1 class="text-2xl md:text-5xl font-title mb-10">
+          {{ $t("index.title") }}
+        </h1>
+      </template>
+      <template #subtitle>
+        <p class="text-base md:text-lg mb-6 font-text font-semibold">
+          {{ $t("index.subtitle") }}
+        </p>
+      </template>
+      <template #description>
+        <p class="text-base md:text-lg mb-6 font-text font-light">
+          {{ $t("index.description") }}
+        </p>
+      </template>
+      <template #cta>
+        <a
+          href="https://tally.so/r/mJR7OX"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <RoundedButton
+            custom-class="bg-white-200 font-text text-black font-semibold"
           >
-            <RoundedButton
-              custom-class="bg-white-200 font-text text-black font-semibold"
-            >
-              {{ $t("index.cta") }}
-            </RoundedButton>
-          </a>
-        </template>
-      </HeroSideImage>
-    </header>
-
+            {{ $t("index.cta") }}
+          </RoundedButton>
+        </a>
+      </template>
+    </HeroSideImage>
+  </header>
+  <main class="index bg-white-200">
     <section class="section2 bg-white-200 pb-20">
       <div class="container mx-auto max-w-[1200px] px-10 py-8">
         <div class="section2-title max-w-[700px] mx-auto">
@@ -275,11 +274,56 @@
       </div>
     </section>
   </main>
+  <footer>
+    <div class="footer relative bg-primary-100 text-white-200 py-10 overflow-hidden">
+      <div class="hidden md:block absolute top-0 left-0 w-full">
+        <NuxtImg
+          src="moment_saas_esg_hero_lines.svg"
+          alt="Header SVG"
+          class="w-full opacity-55"
+        />
+      </div>
+      <div class="container mx-auto max-w-[1200px] px-10">
+        <div class="flex justify-center mb-6">
+          <MomentLogo class="h-10 w-auto fill-white-200" />
+        </div>
+        <hr class="border-white-200 mb-6" />
+        <div class="flex justify-center space-x-4 mb-6">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Circle class="h-10 w-10 fill-white-200" />
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Circle class="h-10 w-10 fill-white-200" />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Circle class="h-10 w-10 fill-white-200" />
+          </a>
+        </div>
+        <div class="text-center text-sm">
+          &copy; {{ new Date().getFullYear() }} Moment.green. All rights
+          reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script setup>
 import { useI18n } from "vue-i18n";
 import Circle from "~/assets/images/circle.vue";
+import MomentLogo from "~/assets/images/momentLogo.vue";
 
 const { t } = useI18n();
 </script>
