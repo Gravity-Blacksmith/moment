@@ -225,23 +225,53 @@
           {{ $t("index.section5Title") }}
         </h2>
       </div>
-      <div
-        class="relative container mx-auto max-w-[1200px] bg-white-200 p-10"
-      >
-      <div class="logos flex flex-col md:grid grid-cols-4 gap-4 p-4">
-        <div class="logo2">
-          <NuxtImg src="science_based_target.svg" alt="Logos"/>
-        </div>
-        <div class="logo2">
-          <NuxtImg src="csrd.svg" alt="Logos"/>
-        </div>
-        <div class="logo2">
-          <NuxtImg src="greenhouse_gas_protocol.svg" alt="Logos"/>
-        </div>
-        <div class="logo2">
-          <NuxtImg src="cdp.svg" alt="Logos"/>
+      <div class="relative container mx-auto max-w-[1200px] bg-white-200 p-10">
+        <div class="logos flex flex-col md:grid grid-cols-4 gap-4 p-4">
+          <div class="logo2">
+            <NuxtImg src="science_based_target.svg" alt="Logos" />
+          </div>
+          <div class="logo2">
+            <NuxtImg src="csrd.svg" alt="Logos" />
+          </div>
+          <div class="logo2">
+            <NuxtImg src="greenhouse_gas_protocol.svg" alt="Logos" />
+          </div>
+          <div class="logo2">
+            <NuxtImg src="cdp.svg" alt="Logos" />
+          </div>
         </div>
       </div>
+    </section>
+
+    <section class="section6 bg-white-200 pb-8">
+      <div
+        class="container max-w-[700px] bg-primary-100 rounded-xl shadow-lg text-white-200 mx-auto"
+      >
+        <div
+          class="flex flex-col md:flex-row justify-between items-center p-10"
+        >
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h2 class="text-xl md:text-2xl font-title mb-4">
+              {{ $t("index.section6Title") }}
+            </h2>
+            <p class="text-base md:text-lg font-text font-light">
+              {{ $t("index.section6Text") }}
+            </p>
+          </div>
+          <div class="md:w-1/2 flex justify-center md:justify-end">
+            <a
+              href="https://tally.so/r/mJR7OX"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <RoundedButton
+                custom-class="bg-white-200 font-text text-black font-semibold"
+              >
+                {{ $t("index.section6Button") }}
+              </RoundedButton>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
