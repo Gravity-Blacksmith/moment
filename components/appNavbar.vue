@@ -1,5 +1,5 @@
 <template>
-  <div class="appNavbar max-w-[1200px] mx-auto">
+  <div class="appNavbar max-w-[1400px] mx-auto">
     <nav
       class="appIndex-navbar flex items-center justify-between p-6 lg:px-16"
       aria-label="Global"

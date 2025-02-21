@@ -113,11 +113,28 @@
             class="container text-white-200 mx-auto max-w-[1200px] px-10 py-8"
           >
             <div
-              class="section3-title max-w-[700px] mx-auto py-10 text-white-200"
+              class="section3-header max-w-[500px] mx-auto py-10 text-white-200 w-fit"
             >
-              <h2 class="text-2xl md:text-3xl font-title mb-4 text-center">
-                {{ $t("index.section3Title") }}
-              </h2>
+              <div class="section3-title relative">
+                <h2
+                  class="text-2xl md:text-3xl font-title mb-10 text-center relative"
+                >
+                  {{ $t("index.section3Title") }}
+                </h2>
+                <svg
+                  width="240"
+                  height="40"
+                  viewBox="0 0 200 40"
+                  class="svgToAnimate absolute -bottom-6 left-1/2 -translate-x-1/2 stroke-primary-200"
+                >
+                  <path
+                    d="M10,30 C50,50 150,10 190,30"
+                    stroke-width="4"
+                    fill="transparent"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
               <p class="text-base md:text-lg font-text font-light text-center">
                 {{ $t("index.section3Text") }}
               </p>
@@ -157,7 +174,9 @@
             </div>
           </div>
         </div>
-        <div class="quote relative w-full py-10 min-h-[200px] -z-1 bg-white-200">
+        <div
+          class="quote relative w-full py-10 min-h-[200px] -z-1 bg-white-200"
+        >
           <div
             class="container h-fit md:absolute max-w-[300px] md:left-1/2 md:transform md:-translate-x-1/2 mx-auto px-10 py-5 rounded-3xl border-primary-100 border-3 z-150"
           >
@@ -173,13 +192,28 @@
         </div>
       </section>
 
-      <section class="section4 bg-primary-200 pb-10 md:pb-50">
-        <div class="section4-title w-fit mx-auto pb-16 relative pt-5">
-          <h2
-            class="text-2xl md:text-3xl font-title mb-4 text-center relative w-fit mx-auto z-10"
-          >
-            {{ $t("index.section4Title") }}
-          </h2>
+      <section class="section4 bg-primary-200 pb-10">
+        <div class="section4-header w-fit mx-auto pb-16 relative pt-5">
+          <div class="section4-title relative">
+            <h2
+              class="text-2xl md:text-3xl font-title mb-4 text-center relative w-fit mx-auto z-10"
+            >
+              {{ $t("index.section4Title") }}
+            </h2>
+            <svg
+              width="240"
+              height="40"
+              viewBox="0 0 200 40"
+              class="svgToAnimate absolute -bottom-6 left-1/2 -translate-x-1/3 stroke-primary-100"
+            >
+              <path
+                d="M10,30 C50,50 150,10 190,30"
+                stroke-width="4"
+                fill="transparent"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
           <Circle
             class="h-25 w-25 fill-accent-200 hidden md:block md:absolute md:-top-5 md:-left-10 z-0"
           />
@@ -202,7 +236,7 @@
             </div>
           </div>
 
-          <div
+          <!-- <div
             class="testimonial bg-primary-100 md:absolute rounded-xl p-4 w-7/8 mx-auto text-center"
           >
             <p
@@ -216,22 +250,37 @@
                 >{{ $t("index.testimonialAuthor") }}</span
               >
             </p>
-          </div>
+          </div> -->
         </div>
       </section>
 
       <section class="section5 bg-white-200 p-14">
         <div
-          class="section5-title w-fit mx-auto pb-16 max-w-[700px] pt-8 relative"
+          class="section5-header w-fit mx-auto pb-16 max-w-[700px] pt-8 relative"
         >
           <Circle
             class="h-25 w-25 fill-accent-200 hidden md:block md:absolute md:top-0 md:right-10 z-0"
           />
-          <h2
-            class="text-2xl md:text-3xl font-title mb-4 text-center relative w-fit mx-auto z-10"
-          >
-            {{ $t("index.section5Title") }}
-          </h2>
+          <div class="section5-title relative">
+            <h2
+              class="text-2xl md:text-3xl font-title mb-4 text-center relative w-fit mx-auto z-10"
+            >
+              {{ $t("index.section5Title") }}
+            </h2>
+            <svg
+              width="240"
+              height="40"
+              viewBox="0 0 200 40"
+              class="svgToAnimate absolute -bottom-6 left-1/2 -translate-x-1/3 stroke-primary-100"
+            >
+              <path
+                d="M10,30 C50,50 150,10 190,30"
+                stroke-width="4"
+                fill="transparent"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
         </div>
         <div
           class="relative container mx-auto max-w-[1200px] bg-white-200 p-10"
@@ -358,9 +407,27 @@ onMounted(() => {
         delay: index * 0.3,
         scrollTrigger: {
           trigger: section,
-          start: "top 98%",
+          start: "top 99%",
           end: "bottom 20%",
           toggleActions: "play none none",
+        },
+      }
+    );
+  });
+  const svgCollection = document.querySelectorAll(".svgToAnimate");
+  console.log(svgCollection);
+  svgCollection.forEach((svg) => {
+    gsap.fromTo(
+      svg,
+      { strokeDasharray: 300, strokeDashoffset: 300 },
+      {
+        strokeDashoffset: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: svg,
+          start: "top 70%",
+          toggleActions: "play none none none",
         },
       }
     );
