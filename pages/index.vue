@@ -336,9 +336,9 @@
     </main>
     <footer>
       <div
-        class="footer relative bg-primary-100 text-white-200 py-10 overflow-hidden"
+        class="footer relative bg-primary-100 text-white-200 py-10 overflow-hidden z-0"
       >
-        <div class="hidden md:block absolute top-0 left-0 w-full">
+        <div class="hidden md:block absolute top-0 left-0 w-full -z-1">
           <NuxtImg
             src="moment_saas_esg_hero_lines.svg"
             alt="Header SVG"
@@ -347,30 +347,36 @@
         </div>
         <div class="container mx-auto max-w-[1200px] px-10">
           <div class="flex justify-center mb-6">
-            <MomentLogo class="h-10 w-auto fill-white-200" />
+            <MomentLogo class="h-6 w-auto fill-white-200" />
           </div>
           <hr class="border-white-200 mb-6" />
           <div class="flex justify-center space-x-4 mb-6">
             <a
-              href="https://facebook.com"
+              href="https://www.linkedin.com/company/moment-green/"
               target="_blank"
               rel="noreferrer noopener"
+              class="cursor-pointer"
             >
-              <Circle class="h-10 w-10 fill-white-200" />
+              <div class="rounded-full overflow-hidden">
+                <NuxtImg
+                  src="linkedin_logo.svg"
+                  alt="Moment Green AI"
+                  class="h-8 w-auto"
+                />
+              </div>
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/MomentGreenAi"
               target="_blank"
               rel="noreferrer noopener"
             >
-              <Circle class="h-10 w-10 fill-white-200" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <Circle class="h-10 w-10 fill-white-200" />
+              <div class="rounded-full overflow-hidden">
+                <NuxtImg
+                  src="x_logo.svg"
+                  alt="Moment Green AI"
+                  class="h-8 w-auto"
+                />
+              </div>
             </a>
           </div>
           <div class="text-center text-sm">
