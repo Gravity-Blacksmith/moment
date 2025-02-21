@@ -108,7 +108,7 @@
       </section>
 
       <section class="section3 bg-primary-100 w-full z-0">
-        <div class="section3-greenbg relative z-1">
+        <div class="section3-greenbg relative">
           <div
             class="container text-white-200 mx-auto max-w-[1200px] px-10 py-8"
           >
@@ -157,7 +157,7 @@
             </div>
           </div>
         </div>
-        <div class="quote relative w-full py-10 min-h-[200px] bg-white-200">
+        <div class="quote relative w-full py-10 min-h-[200px] -z-1 bg-white-200">
           <div
             class="container h-fit md:absolute max-w-[300px] md:left-1/2 md:transform md:-translate-x-1/2 mx-auto px-10 py-5 rounded-3xl border-primary-100 border-3 z-150"
           >
@@ -378,7 +378,7 @@ onMounted(() => {
   height: 50%; /* Ajuste la hauteur du triangle */
   background-color: var(--color-white-200);
   z-index: -1;
-  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 100%, 100% 101%);
 }
 
 .logo {

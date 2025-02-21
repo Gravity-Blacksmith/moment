@@ -4,14 +4,14 @@
       class="appIndex-navbar flex items-center justify-between p-6 lg:px-16"
       aria-label="Global"
     >
-    <!-- logo -->
+      <!-- logo -->
       <div class="flex lg:flex-1">
         <nuxtLink
           to="/"
           class="flex items-center gap-x-2"
           @click="scrollTo('#appHero')"
         >
-          <MomentLogo class="sm:h-7 fill-white-200" />
+          <MomentLogo class="h-7 fill-white-200" />
         </nuxtLink>
       </div>
 
@@ -28,7 +28,9 @@
       </div> -->
 
       <!-- Barre de navigation -->
-      <div class="hidden lg:flex lg:gap-x-12 text-white-200 font-text font-medium">
+      <div
+        class="hidden lg:flex lg:gap-x-12 text-white-200 font-text font-medium"
+      >
         <NuxtLink
           v-for="item in navigation"
           :key="item.name"
@@ -39,7 +41,9 @@
           {{ item.name }}
         </NuxtLink>
       </div>
-      <div class="hidden lg:flex lg:flex-1 lg:gap-x-4 lg:justify-end lg:items-center">
+      <div
+        class="hidden lg:flex lg:flex-1 lg:gap-x-4 lg:justify-end lg:items-center"
+      >
         <div
           class="hidden lg:flex lg:mr-4 text-light-100 lg:items-center justify-between rounded-full bg-light-200 h-8 p-2"
         >
@@ -58,17 +62,25 @@
             fr
           </button>
         </div>
-        <NuxtLink class="hidden lg:flex" to="https://app.moment.green/login" target="_blank">
+        <NuxtLink
+          class="hidden lg:flex"
+          to="https://app.moment.green/login"
+          target="_blank"
+        >
           <RoundedButton
             class="text-md font-semibold text-white-200 border-2 border-white-200"
-            
-            >{{ $t('index.login') }}</RoundedButton>
+            >{{ $t("index.login") }}</RoundedButton
+          >
         </NuxtLink>
-        <NuxtLink class="hidden lg:flex" to="https://tally.so/r/mJR7OX" target="_blank">
+        <NuxtLink
+          class="hidden lg:flex"
+          to="https://tally.so/r/mJR7OX"
+          target="_blank"
+        >
           <RoundedButton
             class="text-md font-semibold text-black bg-white-200"
-            
-            >{{ $t('index.cta') }}</RoundedButton>
+            >{{ $t("index.cta") }}</RoundedButton
+          >
         </NuxtLink>
       </div>
     </nav>
