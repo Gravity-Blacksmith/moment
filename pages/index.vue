@@ -63,9 +63,9 @@
 
           <div class="flex flex-col md:flex-row justify-between items-center">
             <div class="flex flex-col items-center mb-8 md:mb-0 md:w-1/3">
-              <div class="roundBlock relative">
-                <Circle class="h-40 w-40 relative fill-primary-200" />
-                <div class="text-center absolute top-0">
+              <div class="roundBlock relative h-60 w-60">
+                <Circle class="h-60 w-60 absolute top-0 fill-primary-200" />
+                <div class="text-center absolute top-1/2 transform -translate-y-1/2">
                   <div
                     class="text-2xl md:text-4xl font-title font-semibold mb-2"
                   >
@@ -79,9 +79,9 @@
             </div>
 
             <div class="flex flex-col items-center mb-8 md:mb-0 md:w-1/3">
-              <div class="roundBlock relative">
-                <Circle class="h-40 w-40 relative fill-secondary-200" />
-                <div class="text-center absolute top-0">
+              <div class="roundBlock relative h-60 w-60">
+                <Circle class="h-60 w-60 absolute top-0 fill-secondary-200" />
+                <div class="text-center absolute top-1/2 transform -translate-y-1/2">
                   <div class="text-4xl font-title font-semibold mb-2">88%</div>
                   <div class="text-base font-text font-regular">
                     {{ $t("index.block2Text") }}
@@ -91,11 +91,11 @@
             </div>
 
             <div class="flex flex-col items-center mb-8 md:mb-0 md:w-1/3">
-              <div class="roundBlock relative">
-                <Circle class="h-40 w-40 relative fill-accent-200" />
-                <div class="text-center absolute top-0">
+              <div class="roundBlock relative h-60 w-60">
+                <Circle class="h-60 w-60 absolute top-0 fill-accent-200" />
+                <div class="text-center absolute top-1/2 transform -translate-y-1/2">
                   <div class="text-4xl font-title font-semibold mb-2">
-                    33 B€
+                    {{ $t("index.block3Figure") }}
                   </div>
                   <div class="text-base font-text font-regular">
                     {{ $t("index.block3Text") }}
@@ -178,7 +178,7 @@
           class="quote relative w-full py-10 min-h-[200px] -z-1 bg-white-200"
         >
           <div
-            class="container h-fit md:absolute max-w-[300px] md:left-1/2 md:transform md:-translate-x-1/2 mx-auto px-10 py-5 rounded-3xl border-primary-100 border-3 z-150"
+            class="container h-fit md:absolute max-w-[300px] md:left-1/2 md:transform md:-translate-x-1/2 mx-auto px-10 py-5 rounded-3xl z-150"
           >
             <h4
               class="font-title text-center text-black text-lg md:text-xl font-semibold"
@@ -283,7 +283,7 @@
           </div>
         </div>
         <div
-          class="relative container mx-auto max-w-[1200px] bg-white-200 p-10"
+          class="relative container mx-auto max-w-[1200px] bg-white-200 p-25"
         >
           <div class="logos flex flex-col md:grid grid-cols-4 gap-4 p-4">
             <div class="logo2">
@@ -365,19 +365,6 @@
                 />
               </div>
             </a>
-            <a
-              href="https://x.com/MomentGreenAi"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <div class="rounded-full overflow-hidden">
-                <NuxtImg
-                  src="x_logo.svg"
-                  alt="Moment Green AI"
-                  class="h-8 w-auto"
-                />
-              </div>
-            </a>
           </div>
           <div class="text-center text-sm">
             &copy; {{ new Date().getFullYear() }} Moment.green. All rights
@@ -416,6 +403,7 @@ const metaConfig = {
 useSeoMeta({
   title: "Moment.green",
   ogTitle: "Moment.green",
+  ogUrl: "https://moment.green",
   description: () =>
     metaConfig[locale.value]?.description ||
     "La première plateforme SAAS qui simplifie et accélère les évaluations ESG pour les acheteurs et les fournisseurs en utilisant l'intelligence artificielle.'",
@@ -448,7 +436,6 @@ onMounted(() => {
     );
   });
   const svgCollection = document.querySelectorAll(".svgToAnimate");
-  console.log(svgCollection);
   svgCollection.forEach((svg) => {
     gsap.fromTo(
       svg,
