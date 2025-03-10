@@ -11,7 +11,11 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  modules: ['@nuxt/eslint', '@nuxt/image','@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxtjs/i18n', 'nuxt-gtag'],
+  gtag: {
+    enabled: process.env.NODE_ENV === 'production',
+    id: 'G-9KW53KVMGN',
+  },
   i18n: {
     defaultLocale: 'fr',
     detectBrowserLanguage: false,
