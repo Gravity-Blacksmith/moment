@@ -3,6 +3,11 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    googlePrivateKey: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL,
+    googleSpreadsheetId: process.env.GOOGLE_SPREADSHEET_ID,
+  },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   css: ['./assets/css/main.css'],

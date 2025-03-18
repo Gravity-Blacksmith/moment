@@ -33,14 +33,14 @@
         </template>
         <template #cta>
           <a
-            href="https://tally.so/r/mJR7OX"
+            href="/resources"
             target="_blank"
             rel="noreferrer noopener"
           >
             <RoundedButton
-              custom-class="bg-white-200 font-text text-black font-semibold"
+              custom-class="bg-white-200 font-text text-black font-semibold hover:bg-accent-100 hover:text-white"
             >
-              {{ $t("index.cta") }}
+              {{ $t("index.resources") }}
             </RoundedButton>
           </a>
         </template>
@@ -107,7 +107,7 @@
         </div>
       </section>
 
-      <section class="section3 bg-primary-100 w-full z-0">
+      <section id="product" class="section3 bg-primary-100 w-full z-0">
         <div class="section3-greenbg relative">
           <div
             class="container text-white-200 mx-auto max-w-[1200px] px-10 py-8"
@@ -385,34 +385,6 @@ const { t } = useI18n();
 
 import { onMounted } from "vue";
 import { gsap } from "gsap";
-const { locale } = useI18n();
-
-const metaConfig = {
-  en: {
-    description:
-      "The first SAAS platform that simplifies and accelerates ESG assessments for both buyers and suppliers using artificial intelligence.",
-    twitterCard: "summary_large_image",
-  },
-  fr: {
-    description:
-      "La première plateforme SAAS qui simplifie et accélère les évaluations ESG pour les acheteurs et les fournisseurs en utilisant l'intelligence artificielle.",
-    twitterCard: "summary_large_image",
-  },
-};
-
-useSeoMeta({
-  title: "Moment.green",
-  ogTitle: "Moment.green",
-  ogUrl: "https://moment.green",
-  description: () =>
-    metaConfig[locale.value]?.description ||
-    "La première plateforme SAAS qui simplifie et accélère les évaluations ESG pour les acheteurs et les fournisseurs en utilisant l'intelligence artificielle.'",
-  ogDescription: () =>
-    metaConfig[locale.value]?.description ||
-    "La première plateforme SAAS qui simplifie et accélère les évaluations ESG pour les acheteurs et les fournisseurs en utilisant l'intelligence artificielle.'",
-  ogImage: "/public/moment_image.png",
-  twitterCard: "summary_large_image",
-});
 
 onMounted(() => {
   gsap.to("#content", { opacity: 1, duration: 1 });
