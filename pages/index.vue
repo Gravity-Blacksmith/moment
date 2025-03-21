@@ -1,9 +1,8 @@
 <template>
   <div id="content" class="opacity-0 bg-white-200">
     <header
-      class="header bg-gradient-to-r from-primary-100 to-secondary-100 [clip-path:polygon(0_0,100%_0,100%_80%,0_100%)]"
+      class="header relative -top-50 pt-50 bg-gradient-to-r from-primary-100 to-secondary-100 [clip-path:polygon(0_0,100%_0,100%_80%,0_100%)]"
     >
-      <AppNavbar />
       <div class="hidden md:block headerSvg absolute top-0 left-0 w-full -z-10">
         <NuxtImg
           src="moment_saas_esg_hero_lines.svg"
@@ -32,12 +31,9 @@
           </p>
         </template>
         <template #cta>
-          <a
-            href="/resources"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <a href="/resources" rel="noreferrer noopener">
             <RoundedButton
+              id="resourceButton"
               custom-class="bg-white-200 font-text text-black font-semibold hover:bg-accent-100 hover:text-white"
             >
               {{ $t("index.resources") }}
@@ -46,7 +42,7 @@
         </template>
       </HeroSideImage>
     </header>
-    <main class="index bg-white-200">
+    <main class="index bg-white-20 relative -top-50">
       <section class="section2 bg-white-200 pb-20">
         <div class="container mx-auto max-w-[1200px] px-10 py-8">
           <div class="section2-title max-w-[700px] mx-auto">
@@ -65,7 +61,9 @@
             <div class="flex flex-col items-center mb-8 md:mb-0 md:w-1/3">
               <div class="roundBlock relative h-60 w-60">
                 <Circle class="h-60 w-60 absolute top-0 fill-primary-200" />
-                <div class="text-center absolute top-1/2 transform -translate-y-1/2">
+                <div
+                  class="text-center absolute top-1/2 transform -translate-y-1/2"
+                >
                   <div
                     class="text-2xl md:text-4xl font-title font-semibold mb-2"
                   >
@@ -81,7 +79,9 @@
             <div class="flex flex-col items-center mb-8 md:mb-0 md:w-1/3">
               <div class="roundBlock relative h-60 w-60">
                 <Circle class="h-60 w-60 absolute top-0 fill-secondary-200" />
-                <div class="text-center absolute top-1/2 transform -translate-y-1/2">
+                <div
+                  class="text-center absolute top-1/2 transform -translate-y-1/2"
+                >
                   <div class="text-4xl font-title font-semibold mb-2">88%</div>
                   <div class="text-base font-text font-regular">
                     {{ $t("index.block2Text") }}
@@ -93,7 +93,9 @@
             <div class="flex flex-col items-center mb-8 md:mb-0 md:w-1/3">
               <div class="roundBlock relative h-60 w-60">
                 <Circle class="h-60 w-60 absolute top-0 fill-accent-200" />
-                <div class="text-center absolute top-1/2 transform -translate-y-1/2">
+                <div
+                  class="text-center absolute top-1/2 transform -translate-y-1/2"
+                >
                   <div class="text-4xl font-title font-semibold mb-2">
                     {{ $t("index.block3Figure") }}
                   </div>
@@ -389,6 +391,7 @@ import { gsap } from "gsap";
 onMounted(() => {
   gsap.to("#content", { opacity: 1, duration: 1 });
   const sections = document.querySelectorAll("section");
+  const resourceButton = document.querySelector("#resourceButton");
   sections.forEach((section, index) => {
     gsap.fromTo(
       section,
@@ -407,6 +410,11 @@ onMounted(() => {
       }
     );
   });
+  gsap.fromTo(
+    resourceButton,
+    { x: 0 },
+    { x: 8, duration: 0.1, yoyo: true, repeat: 10, ease: "power1.inOut" }
+  );
   const svgCollection = document.querySelectorAll(".svgToAnimate");
   svgCollection.forEach((svg) => {
     gsap.fromTo(

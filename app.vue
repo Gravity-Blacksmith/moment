@@ -1,5 +1,6 @@
 <template>
   <NuxtLayout>
+    <AppNavbar class="relative z-500" />
     <NuxtPage />
   </NuxtLayout>
 </template>

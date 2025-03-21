@@ -27,5 +27,20 @@
     "section6Button": "Request a demo",
     "login": "Sign in",
     "resources": "Download our resources"
+  },
+  "resources": {
+    "resource1": {
+      "title": "Going Beyond Carbon Footprint for Truly Sustainable Purchasing",
+      "intro": "Carbon footprint alone is not enough to assess a product's environmental impact.",
+      "description": "Life Cycle Assessment (LCA) provides a more comprehensive approach by considering factors such as resource consumption, pollution, and recyclability.",
+      "cta": "Download our guide"
+    },
+    "modal": {
+      "cancel": "Cancel",
+      "send": "Send",
+      "emailPlaceholder": "Your email",
+      "name": "Name",
+      "namePlaceholder": "Your name"
+    }
   }
 }
