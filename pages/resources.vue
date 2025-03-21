@@ -3,7 +3,7 @@
     <header
       class="header relative -top-50 pt-50 bg-gradient-to-r from-primary-100 to-secondary-100"
     ></header>
-    <main id="resources" class="index bg-white-20 relative -top-50">
+    <main id="resources" class="index bg-white-20 relative -top-50 opacity-0">
       <section class="section2 bg-white-200 pb-20">
         <div class="container mx-auto max-w-[1200px] px-10 py-8">
           <HeroSideImage image="moment_resource1_FR.png">
@@ -22,7 +22,7 @@
             </template>
             <template #cta>
               <RoundedButton
-                @click="openModal"
+                @click="openModal('resource1')"
                 class="text-md font-semibold text-black bg-primary-200 hover:bg-primary-100 hover:text-white"
                 >{{ $t("resources.resource1.cta") }}</RoundedButton
               >
@@ -37,20 +37,20 @@
               <h1
                 class="text-xl md:text-2xl font-title font-bold mb-10 text-black"
               >
-                {{ $t("resources.resource1.title") }}
+                {{ $t("resources.resource2.title") }}
               </h1>
             </template>
             <template #description>
               <p class="text-black mb-5">
-                {{ $t("resources.resource1.intro") }} <br />
-                {{ $t("resources.resource1.description") }}
+                {{ $t("resources.resource2.intro") }} <br />
+                {{ $t("resources.resource2.description") }}
               </p>
             </template>
             <template #cta>
               <RoundedButton
-                @click="downloadResource1"
+                @click="openModal('resource2')"
                 class="text-md font-semibold text-black bg-primary-200 hover:bg-primary-100 hover:text-white"
-                >{{ $t("resources.resource1.cta") }}</RoundedButton
+                >{{ $t("resources.resource2.cta") }}</RoundedButton
               >
             </template>
           </HeroSideImage>
@@ -65,15 +65,15 @@
   >
     <div id="modal" class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
       <h2 class="text-xl font-bold mb-4 font-title">
-        Télécharger la ressource
+        {{ $t("resources.modal.downloadOurResources") }}
       </h2>
       <p class="text-gray-600 mb-4 font-text">
-        Entrez votre nom et votre email pour continuer.
+        {{ $t("resources.modal.instruction") }}
       </p>
       <div class="mb-4 font-text">
-        <label for="name" class="block text-sm font-medium text-gray-700"
-          >Nom</label
-        >
+        <label for="name" class="block text-sm font-medium text-gray-700">{{
+          $t("resources.modal.name")
+        }}</label>
         <input
           id="name"
           v-model="name"
@@ -145,8 +145,9 @@ const email = ref("");
 const error = ref("");
 const downloading = ref(false);
 const showModal = ref(false);
+const resourceToDownload = ref("");
 
-const openModal = () => {
+const openModal = (resource) => {
   showModal.value = true;
   nextTick(() => {
     gsap.fromTo(
@@ -160,6 +161,7 @@ const openModal = () => {
       }
     );
   });
+  resourceToDownload.value = resource;
 };
 
 const closeModal = () => {
@@ -173,7 +175,8 @@ const closeModal = () => {
 };
 
 const submitEmail = async () => {
-  if (!email.value.includes("@")) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email.value)) {
     error.value = "Veuillez entrer un email valide.";
     return;
   }
@@ -189,13 +192,23 @@ const submitEmail = async () => {
     closeModal();
     downloading.value = true;
 
-    const pdfUrl = "http://localhost:3000/moment_acv_analysis_FR.pdf";
-    const link = document.createElement("a");
-    link.href = pdfUrl;
-    link.download = "moment_acv_analysis_FR.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (resourceToDownload.value === "resource1") {
+      const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
+      const link = document.createElement("a");
+      link.href = pdfUrl;
+      link.download = "moment_acv_analysis_FR.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (resourceToDownload.value === "resource2") {
+      const pdfUrl = "https://moment.green/moment_acv_esg_FR";
+      const link = document.createElement("a");
+      link.href = pdfUrl;
+      link.download = "moment_acv_esg_FR";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   } else {
     error.value = "Une erreur est survenue";
   }

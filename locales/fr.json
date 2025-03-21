@@ -35,12 +35,20 @@
       "description": "L’Analyse du Cycle de Vie (ACV) offre une approche plus complète en intégrant des critères tels que la consommation de ressources, la pollution ou la recyclabilité.",
       "cta": "Téléchargez notre guide"
     },
+    "resource2": {
+      "title": "Conformité ESG & engagement des fournisseurs",
+      "intro": "Transformer une contrainte en opportunité",
+      "description": "Les entreprises doivent garantir la conformité ESG de leurs fournisseurs, une exigence croissante portée par de nouvelles réglementations.",
+      "cta": "Téléchargez notre guide"
+    },
     "modal": {
       "cancel": "Annuler",
       "send": "Envoyer",
       "emailPlaceholder": "Votre email",
       "name": "Nom",
-      "namePlaceholder": "Votre nom"
+      "namePlaceholder": "Votre nom",
+      "downloadOurResources": "Téléchargez le document",
+      "instruction": "Entrez votre nom et votre email pour continuer."
     }
   }
 }

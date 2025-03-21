@@ -35,12 +35,20 @@
       "description": "Life Cycle Assessment (LCA) provides a more comprehensive approach by considering factors such as resource consumption, pollution, and recyclability.",
       "cta": "Download our guide"
     },
+    "resource2": {
+      "title": "ESG Compliance & Supplier Engagement",
+      "intro": "Turning a constraint into an opportunity",
+      "description": "Companies must ensure their suppliers' ESG compliance, a growing requirement driven by new regulations.",
+      "cta": "Download our guide"
+    },
     "modal": {
       "cancel": "Cancel",
       "send": "Send",
       "emailPlaceholder": "Your email",
       "name": "Name",
-      "namePlaceholder": "Your name"
+      "namePlaceholder": "Your name",
+      "downloadOurResources": "Download the document",
+      "instruction": "Enter your name and email to continue."
     }
   }
 }
