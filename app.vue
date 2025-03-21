@@ -2,6 +2,7 @@
   <NuxtLayout>
     <AppNavbar class="relative z-500" />
     <NuxtPage />
+    <AppFooter />
   </NuxtLayout>
 </template>
 
