@@ -146,6 +146,8 @@ const error = ref("");
 const downloading = ref(false);
 const showModal = ref(false);
 const resourceToDownload = ref("");
+const config = useRuntimeConfig();
+const siteKey = config.public.recaptchaSiteKey;
 
 const openModal = (resource) => {
   showModal.value = true;
@@ -175,42 +177,50 @@ const closeModal = () => {
 };
 
 const submitEmail = async () => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email.value)) {
-    error.value = "Veuillez entrer un email valide.";
-    return;
-  }
-
-  const response = await fetch("/api/save-prospect", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email: email.value }),
+  grecaptcha.ready(async () => {
+    const token = await grecaptcha.execute(siteKey, { action: "submit" });
+    if (!name.value || !email.value) {
+      error.value = "Veuillez remplir tous les champs.";
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+      error.value = "Veuillez entrer un email valide.";
+      return;
+    }
+  
+    const response = await fetch("/api/save-prospect", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token, name: name.value, email: email.value }),
+    });
+  
+    const result = await response.json();
+    if (result.success) {
+      closeModal();
+      downloading.value = true;
+  
+      if (resourceToDownload.value === "resource1") {
+        const pdfUrl = "http://localhost:3000/moment_acv_analysis_FR.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "moment_acv_analysis_FR.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else if (resourceToDownload.value === "resource2") {
+        const pdfUrl = "http://localhost:3000/moment_acv_esg_FR";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "moment_acv_esg_FR";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    } else {
+      error.value = "Une erreur est survenue";
+    }
   });
 
-  const result = await response.json();
-  if (result.success) {
-    closeModal();
-    downloading.value = true;
-
-    if (resourceToDownload.value === "resource1") {
-      const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
-      const link = document.createElement("a");
-      link.href = pdfUrl;
-      link.download = "moment_acv_analysis_FR.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else if (resourceToDownload.value === "resource2") {
-      const pdfUrl = "https://moment.green/moment_acv_esg_FR";
-      const link = document.createElement("a");
-      link.href = pdfUrl;
-      link.download = "moment_acv_esg_FR";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  } else {
-    error.value = "Une erreur est survenue";
-  }
 };
 </script>
