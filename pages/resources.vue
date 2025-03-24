@@ -229,21 +229,21 @@ const submitEmail = async () => {
       downloading.value = true;
 
       if (resourceToDownload.value === "resource1") {
-        console.log("lcoale", locale);
         if (locale.value === "en") {
           const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
           const link = document.createElement("a");
           link.href = pdfUrl;
-          link.download = "moment_acv_analysis_FR.pdf";
+          link.download = "moment_acv_analysis_FR.pdf"; // Ensure the file is downloaded
+          link.target = "_self"; // Prevent opening in a new tab
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
         } else if (locale.value === "fr") {
-          console.log("fr");
           const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
           const link = document.createElement("a");
           link.href = pdfUrl;
           link.download = "moment_acv_analysis_FR.pdf";
+          link.target = "_self"; // Prevent opening in a new tab
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
@@ -254,6 +254,7 @@ const submitEmail = async () => {
           const link = document.createElement("a");
           link.href = pdfUrl;
           link.download = "moment_acv_esg_FR.pdf";
+          link.target = "_self"; // Prevent opening in a new tab
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
@@ -262,6 +263,7 @@ const submitEmail = async () => {
           const link = document.createElement("a");
           link.href = pdfUrl;
           link.download = "moment_acv_esg_FR.pdf";
+          link.target = "_self"; // Prevent opening in a new tab
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
@@ -273,6 +275,7 @@ const submitEmail = async () => {
           const link = document.createElement("a");
           link.href = pdfUrl;
           link.download = "moment_responsible_ai_purchasing_FR.pdf";
+          link.target = "_self"; // Prevent opening in a new tab
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
@@ -282,6 +285,7 @@ const submitEmail = async () => {
           const link = document.createElement("a");
           link.href = pdfUrl;
           link.download = "moment_responsible_ai_purchasing_FR.pdf";
+          link.target = "_self"; // Prevent opening in a new tab
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
