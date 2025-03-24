@@ -56,6 +56,32 @@
           </HeroSideImage>
         </div>
       </section>
+      <section class="section4 bg-white-200 pb-20">
+        <div class="container mx-auto max-w-[1200px] px-10 py-8">
+          <HeroSideImage image="moment_resource3_FR.png">
+            <template #title>
+              <h1
+                class="text-xl md:text-2xl font-title font-bold mb-10 text-black"
+              >
+                {{ $t("resources.resource3.title") }}
+              </h1>
+            </template>
+            <template #description>
+              <p class="text-black mb-5">
+                {{ $t("resources.resource3.intro") }} <br />
+                {{ $t("resources.resource3.description") }}
+              </p>
+            </template>
+            <template #cta>
+              <RoundedButton
+                @click="openModal('resource3')"
+                class="text-md font-semibold text-black bg-primary-200 hover:bg-primary-100 hover:text-white"
+                >{{ $t("resources.resource3.cta") }}</RoundedButton
+              >
+            </template>
+          </HeroSideImage>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -116,6 +142,8 @@
 <script setup>
 import { onMounted } from "vue";
 import { gsap } from "gsap";
+import { useI18n } from "vue-i18n";
+const { locale } = useI18n();
 
 onMounted(() => {
   gsap.to("#resources", { opacity: 1, duration: 1 });
@@ -188,39 +216,80 @@ const submitEmail = async () => {
       error.value = "Veuillez entrer un email valide.";
       return;
     }
-  
+
     const response = await fetch("/api/save-prospect", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token, name: name.value, email: email.value }),
     });
-  
+
     const result = await response.json();
     if (result.success) {
       closeModal();
       downloading.value = true;
-  
+
       if (resourceToDownload.value === "resource1") {
-        const pdfUrl = "http://localhost:3000/moment_acv_analysis_FR.pdf";
-        const link = document.createElement("a");
-        link.href = pdfUrl;
-        link.download = "moment_acv_analysis_FR.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        console.log("lcoale", locale);
+        if (locale.value === "en") {
+          const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
+          const link = document.createElement("a");
+          link.href = pdfUrl;
+          link.download = "moment_acv_analysis_FR.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else if (locale.value === "fr") {
+          console.log("fr");
+          const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
+          const link = document.createElement("a");
+          link.href = pdfUrl;
+          link.download = "moment_acv_analysis_FR.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
       } else if (resourceToDownload.value === "resource2") {
-        const pdfUrl = "http://localhost:3000/moment_acv_esg_FR";
-        const link = document.createElement("a");
-        link.href = pdfUrl;
-        link.download = "moment_acv_esg_FR";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        if (locale.value === "en") {
+          const pdfUrl = "https://moment.green/moment_esg_FR.pdf";
+          const link = document.createElement("a");
+          link.href = pdfUrl;
+          link.download = "moment_acv_esg_FR.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else if (locale.value === "fr") {
+          const pdfUrl = "https://moment.green/moment_esg_FR.pdf";
+          const link = document.createElement("a");
+          link.href = pdfUrl;
+          link.download = "moment_acv_esg_FR.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      } else if (resourceToDownload.value === "resource3") {
+        if (locale.value === "en") {
+          const pdfUrl =
+            "https://moment.green/moment_responsible_ai_purchasing_FR.pdf";
+          const link = document.createElement("a");
+          link.href = pdfUrl;
+          link.download = "moment_responsible_ai_purchasing_FR.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else if (locale.value === "fr") {
+          const pdfUrl =
+            "https://moment.green/moment_responsible_ai_purchasing_FR.pdf";
+          const link = document.createElement("a");
+          link.href = pdfUrl;
+          link.download = "moment_responsible_ai_purchasing_FR.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
       }
     } else {
       error.value = "Une erreur est survenue";
     }
   });
-
 };
 </script>

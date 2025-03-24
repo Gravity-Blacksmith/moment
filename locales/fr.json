@@ -41,6 +41,12 @@
       "description": "Les entreprises doivent garantir la conformité ESG de leurs fournisseurs, une exigence croissante portée par de nouvelles réglementations.",
       "cta": "Téléchargez notre guide"
     },
+    "resource3": {
+      "title": "IA & Achats responsables",
+      "intro": "Le futur du sourcing durable",
+      "description": "L’IA révolutionne la fonction achats en automatisant l’évaluation ESG des fournisseurs et en améliorant la prise de décision.",
+      "cta": "Téléchargez notre guide"
+    },
     "modal": {
       "cancel": "Annuler",
       "send": "Envoyer",

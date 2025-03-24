@@ -41,6 +41,12 @@
       "description": "Companies must ensure their suppliers' ESG compliance, a growing requirement driven by new regulations.",
       "cta": "Download our guide"
     },
+    "resource3": {
+      "title": "AI & Responsible Purchasing",
+      "intro": "The future of sustainable sourcing",
+      "description": "AI is revolutionizing procurement by automating supplier ESG assessments and improving decision-making.",
+      "cta": "Download our guide"
+    },
     "modal": {
       "cancel": "Cancel",
       "send": "Send",
