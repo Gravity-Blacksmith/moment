@@ -253,7 +253,7 @@ const submitEmail = async () => {
           const pdfUrl = "https://moment.green/moment_esg_FR.pdf";
           const link = document.createElement("a");
           link.href = pdfUrl;
-          link.download = "moment_acv_esg_FR.pdf";
+          link.download = "moment_esg_FR.pdf";
           link.target = "_blank"; // Prevent opening in a new tab
           document.body.appendChild(link);
           link.click();
@@ -262,7 +262,7 @@ const submitEmail = async () => {
           const pdfUrl = "https://moment.green/moment_esg_FR.pdf";
           const link = document.createElement("a");
           link.href = pdfUrl;
-          link.download = "moment_acv_esg_FR.pdf";
+          link.download = "moment_esg_FR.pdf";
           link.target = "_blank"; // Prevent opening in a new tab
           document.body.appendChild(link);
           link.click();
