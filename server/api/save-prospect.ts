@@ -25,11 +25,12 @@ export default defineEventHandler(async (event) => {
   const { name, email } = body;
   console.log('Name and email', name, email);
 
-  console.log(sheets.spreadsheets);
+  console.log(sheets.spreadsheets.values);
   await sheets.spreadsheets.values.append({
     spreadsheetId,
     range,
     valueInputOption: 'RAW',
+    insertDataOption: 'INSERT_ROWS',
     requestBody: { values: [[name, email, new Date().toISOString()]] }
   })
 
