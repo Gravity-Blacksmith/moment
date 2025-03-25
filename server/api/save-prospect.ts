@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   // const siteKey = config.public.recaptchaSiteKey;
 
   // Vérification reCAPTCHA
-  try {
+  // try {
     // const recaptchaResponse = await fetch(`https://recaptchaenterprise.googleapis.com/v1/projects/moment-454108/assessments?key=${apiKey}`, {
     //   method: 'POST',
     //   body: JSON.stringify({
@@ -44,9 +44,9 @@ export default defineEventHandler(async (event) => {
 
   return { success: true }
   
-} 
+});
 // catch (error) {
 //   console.error('error verifying captcha', error);
 //   return { success: false, message: 'Échec de la validation reCAPTCHA' };
 // }
-})
+// })
