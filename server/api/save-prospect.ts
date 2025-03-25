@@ -20,12 +20,12 @@ export default defineEventHandler(async (event) => {
   const sheets = google.sheets({ version: 'v4', auth })
   const spreadsheetId = config.googleSpreadsheetId;
   console.log('Google sheets found', spreadsheetId);
-  const range = 'Feuille 1!A:A'
+  const range = 'Feuille 1!A';
 
   const { name, email } = body;
   console.log('Name and email', name, email);
 
-
+  console.log(sheets.spreadsheets);
   await sheets.spreadsheets.values.append({
     spreadsheetId,
     range,
