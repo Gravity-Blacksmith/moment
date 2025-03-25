@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   runtimeConfig: {
-    googlePrivateKey: process.env.GOOGLE_PRIVATE_KEY?.split(String.raw`\n`).join('\n'),
+    googlePrivateKey: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
     googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL,
     googleSpreadsheetId: process.env.GOOGLE_SPREADSHEET_ID,
   },
