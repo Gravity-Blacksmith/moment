@@ -7,14 +7,18 @@ export default defineEventHandler(async (event) => {
 
   const auth = new google.auth.GoogleAuth({
     credentials: {
+      projectId: config.googleProjectId,
+      private_key_id: config.googlePrivateKeyId,
+      private_key: config.googlePrivateKey,
       client_email: config.googleClientEmail,
-      private_key: config.googlePrivateKey
+      client_id: config.googleClientId,
     },
     scopes: ['https://www.googleapis.com/auth/spreadsheets']
   })
-
+  console.log('Google auth done');
   const sheets = google.sheets({ version: 'v4', auth })
-  const spreadsheetId = config.googleSpreadsheetId
+  const spreadsheetId = config.googleSpreadsheetId;
+  console.log('Google sheets found', config.spreadsheetId);
   const range = 'Feuille 1!A:A'
 
   const { name, email } = body;
