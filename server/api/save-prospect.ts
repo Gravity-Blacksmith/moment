@@ -26,14 +26,13 @@ export default defineEventHandler(async (event) => {
   console.log('Name and email', name, email);
 
   console.log(sheets.spreadsheets.values);
-  await sheets.spreadsheets.values.append({
+  const doc = await sheets.spreadsheets.values.append({
     spreadsheetId,
     range,
     valueInputOption: 'RAW',
     insertDataOption: 'INSERT_ROWS',
-    requestBody: { values: [[name, email, new Date().toISOString()]] }
+    requestBody: { values: [name, email, new Date().toISOString()] }
   })
-
+  console.log('Doc', doc);
   return { success: true }
-  
 });
