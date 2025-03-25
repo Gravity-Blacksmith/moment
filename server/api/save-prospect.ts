@@ -3,6 +3,7 @@ import { defineEventHandler, readBody } from 'h3'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
+  console.log('Body', body);
   const config = useRuntimeConfig();
 
   const auth = new google.auth.GoogleAuth({
@@ -18,10 +19,11 @@ export default defineEventHandler(async (event) => {
   console.log('Google auth done');
   const sheets = google.sheets({ version: 'v4', auth })
   const spreadsheetId = config.googleSpreadsheetId;
-  console.log('Google sheets found', config.spreadsheetId);
+  console.log('Google sheets found', spreadsheetId);
   const range = 'Feuille 1!A:A'
 
   const { name, email } = body;
+  console.log('Name and email', name, email);
 
 
   await sheets.spreadsheets.values.append({
