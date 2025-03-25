@@ -175,7 +175,6 @@ const downloading = ref(false);
 const showModal = ref(false);
 const resourceToDownload = ref("");
 const config = useRuntimeConfig();
-const siteKey = config.public.recaptchaSiteKey;
 
 const openModal = (resource) => {
   showModal.value = true;
@@ -205,95 +204,92 @@ const closeModal = () => {
 };
 
 const submitEmail = async () => {
-  grecaptcha.ready(async () => {
-    const token = await grecaptcha.execute(siteKey, { action: "submit" });
-    if (!name.value || !email.value) {
-      error.value = "Veuillez remplir tous les champs.";
-      return;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value)) {
-      error.value = "Veuillez entrer un email valide.";
-      return;
-    }
+  if (!name.value || !email.value) {
+    error.value = "Veuillez remplir tous les champs.";
+    return;
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email.value)) {
+    error.value = "Veuillez entrer un email valide.";
+    return;
+  }
 
-    const response = await fetch("/api/save-prospect", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token, name: name.value, email: email.value }),
-    });
-
-    const result = await response.json();
-    if (result.success) {
-      closeModal();
-      downloading.value = true;
-
-      if (resourceToDownload.value === "resource1") {
-        if (locale.value === "en") {
-          const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
-          const link = document.createElement("a");
-          link.href = pdfUrl;
-          link.download = "moment_acv_analysis_FR.pdf"; // Ensure the file is downloaded
-          link.target = "_blank"; // Prevent opening in a new tab
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        } else if (locale.value === "fr") {
-          const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
-          const link = document.createElement("a");
-          link.href = pdfUrl;
-          link.download = "moment_acv_analysis_FR.pdf";
-          link.target = "_blank"; // Prevent opening in a new tab
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }
-      } else if (resourceToDownload.value === "resource2") {
-        if (locale.value === "en") {
-          const pdfUrl = "https://moment.green/moment_esg_FR.pdf";
-          const link = document.createElement("a");
-          link.href = pdfUrl;
-          link.download = "moment_esg_FR.pdf";
-          link.target = "_blank"; // Prevent opening in a new tab
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        } else if (locale.value === "fr") {
-          const pdfUrl = "https://moment.green/moment_esg_FR.pdf";
-          const link = document.createElement("a");
-          link.href = pdfUrl;
-          link.download = "moment_esg_FR.pdf";
-          link.target = "_blank"; // Prevent opening in a new tab
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }
-      } else if (resourceToDownload.value === "resource3") {
-        if (locale.value === "en") {
-          const pdfUrl =
-            "https://moment.green/moment_responsible_ai_purchasing_FR.pdf";
-          const link = document.createElement("a");
-          link.href = pdfUrl;
-          link.download = "moment_responsible_ai_purchasing_FR.pdf";
-          link.target = "_blank"; // Prevent opening in a new tab
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        } else if (locale.value === "fr") {
-          const pdfUrl =
-            "https://moment.green/moment_responsible_ai_purchasing_FR.pdf";
-          const link = document.createElement("a");
-          link.href = pdfUrl;
-          link.download = "moment_responsible_ai_purchasing_FR.pdf";
-          link.target = "_blank"; // Prevent opening in a new tab
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }
-      }
-    } else {
-      error.value = "Une erreur est survenue";
-    }
+  const response = await fetch("/api/save-prospect", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: name.value, email: email.value }),
   });
+
+  const result = await response.json();
+  if (result.success) {
+    closeModal();
+    downloading.value = true;
+
+    if (resourceToDownload.value === "resource1") {
+      if (locale.value === "en") {
+        const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "moment_acv_analysis_FR.pdf"; // Ensure the file is downloaded
+        link.target = "_blank"; // Prevent opening in a new tab
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else if (locale.value === "fr") {
+        const pdfUrl = "https://moment.green/moment_acv_analysis_FR.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "moment_acv_analysis_FR.pdf";
+        link.target = "_blank"; // Prevent opening in a new tab
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    } else if (resourceToDownload.value === "resource2") {
+      if (locale.value === "en") {
+        const pdfUrl = "https://moment.green/moment_esg_FR.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "moment_esg_FR.pdf";
+        link.target = "_blank"; // Prevent opening in a new tab
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else if (locale.value === "fr") {
+        const pdfUrl = "https://moment.green/moment_esg_FR.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "moment_esg_FR.pdf";
+        link.target = "_blank"; // Prevent opening in a new tab
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    } else if (resourceToDownload.value === "resource3") {
+      if (locale.value === "en") {
+        const pdfUrl =
+          "https://moment.green/moment_responsible_ai_purchasing_FR.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "moment_responsible_ai_purchasing_FR.pdf";
+        link.target = "_blank"; // Prevent opening in a new tab
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else if (locale.value === "fr") {
+        const pdfUrl =
+          "https://moment.green/moment_responsible_ai_purchasing_FR.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "moment_responsible_ai_purchasing_FR.pdf";
+        link.target = "_blank"; // Prevent opening in a new tab
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+  } else {
+    error.value = "Une erreur est survenue";
+  }
 };
 </script>
