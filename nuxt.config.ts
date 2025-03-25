@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     googlePrivateKey: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
     googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL,
     googleSpreadsheetId: process.env.GOOGLE_SPREADSHEET_ID,
-    recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
+    apiKey: process.env.API_KEY,
     public: {
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY
     },

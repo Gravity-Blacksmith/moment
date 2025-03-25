@@ -4,21 +4,21 @@ import { defineEventHandler, readBody } from 'h3'
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
   const config = useRuntimeConfig();
-  const secretKey = config.recaptchaSecretKey;
+  const apiKey = config.apiKey;
+  const siteKey = config.public.recaptchaSiteKey;
 
   // Vérification reCAPTCHA
-  const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      secret: secretKey,
-      response: body.token,
-    }).toString(),
-  });
-  const data = await recaptchaResponse.json();
-  if (!data.success) {
-    return { success: false, message: 'Échec de la validation reCAPTCHA' };
-  }
+  try {
+    const recaptchaResponse = await fetch(`https://recaptchaenterprise.googleapis.com/v1/projects/moment-454108/assessments?key=${apiKey}`, {
+      method: 'POST',
+      body: JSON.stringify({
+        event: {
+          token: body.token,
+          siteKey: siteKey,
+          expectedAction: 'USER_ACTION',
+        },
+      }),
+    });
 
   const auth = new google.auth.GoogleAuth({
     credentials: {
@@ -43,4 +43,9 @@ export default defineEventHandler(async (event) => {
   })
 
   return { success: true }
+  
+} catch (error) {
+  console.error('error verifying captcha', error);
+  return { success: false, message: 'Échec de la validation reCAPTCHA' };
+}
 })
