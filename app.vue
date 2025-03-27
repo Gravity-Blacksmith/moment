@@ -32,7 +32,7 @@ useSeoMeta({
   ogDescription: () =>
     metaConfig[locale.value]?.description ||
     "La première plateforme SAAS qui simplifie et accélère les évaluations ESG pour les acheteurs et les fournisseurs en utilisant l'intelligence artificielle.'",
-  ogImage: "/public/moment_image.png",
+  ogImage: "https://moment.green/moment_image.png",
   twitterCard: "summary_large_image",
 });
 </script>
