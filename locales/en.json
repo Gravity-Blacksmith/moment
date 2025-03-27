@@ -30,21 +30,21 @@
   },
   "resources": {
     "resource1": {
-      "title": "Going Beyond Carbon Footprint for Truly Sustainable Purchasing",
-      "intro": "Carbon footprint alone is not enough to assess a product's environmental impact.",
-      "description": "Life Cycle Assessment (LCA) provides a more comprehensive approach by considering factors such as resource consumption, pollution, and recyclability.",
+      "title": "Beyond Carbon: Why a product's carbon footprint is not enough",
+      "intro": "Focusing solely on a product’s carbon footprint doesn’t provide a full picture of its environmental impact. This white paper explains why a broader Life Cycle Assessment (LCA) approach is essential for truly responsible purchasing decisions.",
+      "description": "Get the best practices and methodologies today.",
       "cta": "Download our guide"
     },
     "resource2": {
-      "title": "ESG Compliance & Supplier Engagement",
-      "intro": "Turning a constraint into an opportunity",
-      "description": "Companies must ensure their suppliers' ESG compliance, a growing requirement driven by new regulations.",
+      "title": "ESG Compliance & Supplier Engagement: Turning a constraint into an opportunity",
+      "intro": "With regulations like CSRD and CS3D tightening, collecting and analyzing ESG data from suppliers is a growing challenge. This white paper explores why companies struggle with ESG compliance and how automation can turn it into a competitive advantage.",
+      "description": "Download now to discover actionable solutions.",
       "cta": "Download our guide"
     },
     "resource3": {
-      "title": "AI & Responsible Purchasing",
-      "intro": "The future of sustainable sourcing",
-      "description": "AI is revolutionizing procurement by automating supplier ESG assessments and improving decision-making.",
+      "title": "AI & Responsible Purchasing: The future of sustainable sourcing",
+      "intro": "Artificial intelligence is revolutionizing how companies select suppliers and products, enhancing transparency, compliance, and sustainability. This white paper delves into how AI can automate and accelerate responsible sourcing.",
+      "description": "Learn how to integrate these technologies for a more efficient and sustainable supply chain.",
       "cta": "Download our guide"
     },
     "modal": {

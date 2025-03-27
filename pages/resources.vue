@@ -16,7 +16,9 @@
             </template>
             <template #description>
               <p class="text-black mb-5">
-                {{ $t("resources.resource1.intro") }} <br />
+                {{ $t("resources.resource1.intro") }}
+              </p>
+              <p class="text-black mb-5">
                 {{ $t("resources.resource1.description") }}
               </p>
             </template>
@@ -42,7 +44,9 @@
             </template>
             <template #description>
               <p class="text-black mb-5">
-                {{ $t("resources.resource2.intro") }} <br />
+                {{ $t("resources.resource2.intro") }}
+              </p>
+              <p class="text-black mb-5">
                 {{ $t("resources.resource2.description") }}
               </p>
             </template>
@@ -68,7 +72,9 @@
             </template>
             <template #description>
               <p class="text-black mb-5">
-                {{ $t("resources.resource3.intro") }} <br />
+                {{ $t("resources.resource3.intro") }}
+              </p>
+              <p class="text-black mb-5">
                 {{ $t("resources.resource3.description") }}
               </p>
             </template>

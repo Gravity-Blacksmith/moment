@@ -30,21 +30,21 @@
   },
   "resources": {
     "resource1": {
-      "title": "Aller au-delà de l’empreinte carbone pour des achats vraiment durables",
-      "intro": "L’empreinte carbone seule ne suffit pas à évaluer l’impact environnemental d’un produit.",
-      "description": "L’Analyse du Cycle de Vie (ACV) offre une approche plus complète en intégrant des critères tels que la consommation de ressources, la pollution ou la recyclabilité.",
+      "title": "Au-delà du carbone : Pourquoi l’empreinte carbone d’un produit ne suffit pas?",
+      "intro": "Se focaliser uniquement sur l’empreinte carbone d’un produit ne permet pas une évaluation complète de son impact environnemental. Dans ce livre blanc, nous explorons pourquoi une approche plus globale basée sur l’Analyse du Cycle de Vie (ACV) est essentielle pour des décisions d’achats réellement responsables.",
+      "description": "Accédez aux meilleures pratiques et méthodologies dès maintenant.",
       "cta": "Téléchargez notre guide"
     },
     "resource2": {
-      "title": "Conformité ESG & engagement des fournisseurs",
-      "intro": "Transformer une contrainte en opportunité",
-      "description": "Les entreprises doivent garantir la conformité ESG de leurs fournisseurs, une exigence croissante portée par de nouvelles réglementations.",
+      "title": "Conformité ESG & Engagement Fournisseurs : Transformer une contrainte en opportunité",
+      "intro": "Face aux réglementations comme la CSRD et la CS3D, collecter et analyser les données ESG des fournisseurs est un défi majeur. Ce livre blanc vous aide à comprendre pourquoi les entreprises peinent à structurer cette démarche et comment automatiser la conformité pour en faire un levier de performance.",
+      "description": "Téléchargez-le pour découvrir des solutions concrètes et pragmatiques.",
       "cta": "Téléchargez notre guide"
     },
     "resource3": {
-      "title": "IA & Achats responsables",
-      "intro": "Le futur du sourcing durable",
-      "description": "L’IA révolutionne la fonction achats en automatisant l’évaluation ESG des fournisseurs et en améliorant la prise de décision.",
+      "title": "IA & Achats responsables : Le futur du sourcing durable",
+      "intro": "L’intelligence artificielle transforme la manière dont les entreprises sélectionnent leurs fournisseurs et produits, optimisant transparence, conformité et impact environnemental. Ce livre blanc vous plonge dans les opportunités qu’offre l’IA pour automatiser et accélérer les achats durables.",
+      "description": "Découvrez comment adopter ces technologies pour une supply chain plus responsable et performante.",
       "cta": "Téléchargez notre guide"
     },
     "modal": {
